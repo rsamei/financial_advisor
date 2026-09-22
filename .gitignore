@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Personal financial-data ignore rules.
+#
+# Enforced by tools/security_guards.py: every rule listed in that file's
+# REQUIRED_IGNORE_RULES must still be present here, and no un-allowlisted
+# negation (!pattern) may re-include one. .gitignore is order-sensitive, so a
+# rule can be physically present yet no longer take effect.
+#
+# Default posture is privacy-first. This repository holds one person's whole
+# balance sheet; everything that quotes an amount stays local. market/queries.json
+# IS tracked on purpose -- it contains no personal data, it is small, and it is
+# what makes a market claim replayable.
+# ---------------------------------------------------------------------------
+
+# --- The financial position itself. Never commit these. -------------------
+# Profile, balance sheet, holdings, risk profile: written by /setup.
+profile/**
+# Statements, payslips, broker exports the user drops in for /setup to read.
+documents/**
+!documents/README.md
+
+# --- Market corpus: large and regenerable from market/queries.json --------
+market/observations.json
+market/evidence/**
+market/snapshots/**
+market/exports/**
+
+# --- Decisions, advice, policy, actions, alerts, opinions -----------------
+# Every one of these quotes real amounts against real accounts.
+decision_tracker.csv
+decisions/**
+advice/**
+ips/**
+track/**
+watch/**
+views/**
+
+# --- Refusal log ----------------------------------------------------------
+# It quotes the text that was refused, which is the tip itself.
+compliance/**
+
+# --- Disposable and operational ------------------------------------------
+.cache/**
+.state/**
+# State moved by /reset: never commit it on the way out either.
+.reset-trash/
+
+# --- Secrets --------------------------------------------------------------
+.env
+.env.*
+
+# --- Tooling --------------------------------------------------------------
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

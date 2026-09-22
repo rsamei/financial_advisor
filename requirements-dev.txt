@@ -1,0 +1,3 @@
+# The runtime is stdlib-only, on purpose: no third-party package sits between a
+# provider response and a verdict. This file is for development only.
+pytest>=8,<10

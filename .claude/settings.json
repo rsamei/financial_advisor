@@ -1,0 +1,51 @@
+{
+  "model": "claude-opus-5",
+  "effortLevel": "low",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "low"
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Skill(financial-advisor)",
+      "Bash(python3 tools/fx.py:*)",
+      "Bash(python tools/fx.py:*)",
+      "Bash(python3 tools/profile_check.py:*)",
+      "Bash(python tools/profile_check.py:*)",
+      "Bash(python tools/workflow_state.py:*)",
+      "Bash(python3 tools/workflow_state.py:*)",
+      "Bash(python tools/lint_skills.py:*)",
+      "Bash(python3 tools/lint_skills.py:*)",
+      "Bash(python tools/security_guards.py:*)",
+      "Bash(python3 tools/security_guards.py:*)",
+      "Bash(python tools/check_framework_version.py:*)",
+      "Bash(python3 tools/check_framework_version.py:*)",
+      "Bash(python -m unittest:*)",
+      "Bash(python3 -m unittest:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(python tools/market_retrieve.py:*)",
+      "Bash(python3 tools/market_retrieve.py:*)",
+      "Bash(python tools/market_merge.py:*)",
+      "Bash(python3 tools/market_merge.py:*)",
+      "Bash(python tools/evidence_memory.py:*)",
+      "Bash(python3 tools/evidence_memory.py:*)",
+      "Bash(python tools/decision_score.py:*)",
+      "Bash(python3 tools/decision_score.py:*)",
+      "Bash(python tools/portfolio_math.py:*)",
+      "Bash(python3 tools/portfolio_math.py:*)",
+      "Bash(python tools/tracker.py:*)",
+      "Bash(python3 tools/tracker.py:*)",
+      "Bash(python tools/report_check.py:*)",
+      "Bash(python3 tools/report_check.py:*)",
+      "Bash(python tools/compliance_guard.py:*)",
+      "Bash(python3 tools/compliance_guard.py:*)",
+      "Bash(python tools/watchlist.py:*)",
+      "Bash(python3 tools/watchlist.py:*)",
+      "Bash(python tools/views.py:*)",
+      "Bash(python3 tools/views.py:*)"
+    ]
+  }
+}

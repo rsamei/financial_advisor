@@ -1,0 +1,1019 @@
+{
+  "Q-2026-09-21-macro-rates": {
+    "tier": "M",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "ecb",
+        "operator": "ecb",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "6",
+          "--series",
+          "FM.B.U2.EUR.4F.KR.MRR_FR.LEV"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:54:00+00:00",
+        "reason": "https://data-api.ecb.europa.eu/service/data/FM/B.U2.EUR.4F.KR.MRR_FR.LEV?format=csvdata&lastNObservations=6: the TLS certificate could not be verified against this machine's trust store. This is a local configuration problem, not a source failure. Fix it by installing certificates (`pip install truststore certifi`) or by pointing SSL_CERT_FILE at a CA bundle. Verification is never disabled."
+      },
+      {
+        "provider": "ecb",
+        "operator": "ecb",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "6",
+          "--series",
+          "FM.B.U2.EUR.4F.KR.MRR_FR.LEV"
+        ],
+        "mode": "use",
+        "cache_key": "9fc6805e74e0a9d68e3ae1140bcc7e6a86e45239d08f315f68ad6aa5bdb15fce",
+        "status": "ok",
+        "records": 6,
+        "fetched_at": "2026-09-20T22:54:15+00:00",
+        "cache_age_days": 0,
+        "response_digest": "47ca647751aec90382aeeb255203f7bd8623a4131c7985e8e8dd7c5f79d8c68e"
+      },
+      {
+        "provider": "fred",
+        "operator": "stlouisfed",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "30",
+          "--series",
+          "DGS10"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:54:57+00:00",
+        "reason": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10 did not answer: The read operation timed out"
+      },
+      {
+        "provider": "fred",
+        "operator": "stlouisfed",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "30",
+          "--series",
+          "DGS10"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:55:25+00:00",
+        "reason": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10 did not answer: The read operation timed out"
+      },
+      {
+        "provider": "fred",
+        "operator": "stlouisfed",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "30",
+          "--series",
+          "DGS10"
+        ],
+        "mode": "live",
+        "cache_key": "d4ab4dc39e4a9d6c58cb14069093a164da12bfc8213582cd7ea674187da61f1a",
+        "status": "ok",
+        "records": 30,
+        "fetched_at": "2026-09-20T23:15:52+00:00",
+        "cache_age_days": 0,
+        "response_digest": "cc3a0b22ef46b54cb519f78f12e4954715fc876b0df054592ef75636ac6fffc1"
+      }
+    ],
+    "coverage": {
+      "c1_independent_operators": 1,
+      "operators": [
+        "ecb"
+      ],
+      "c2_within_freshness": false,
+      "stale": [
+        "ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-02-05: 593 days old, window is 35",
+        "ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-03-12: 558 days old, window is 35",
+        "ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-04-23: 516 days old, window is 35",
+        "ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-06-11: 467 days old, window is 35",
+        "ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2026-06-17: 96 days old, window is 35"
+      ],
+      "c3_primary_source": true,
+      "primary_providers": [
+        "ecb"
+      ],
+      "c4_observation_not_forecast": true,
+      "forecast_keys": [],
+      "failed_sources": [
+        {
+          "provider": "ecb",
+          "status": "failed",
+          "reason": "https://data-api.ecb.europa.eu/service/data/FM/B.U2.EUR.4F.KR.MRR_FR.LEV?format=csvdata&lastNObservations=6: the TLS certificate could not be verified against this machine's trust store. This is a local configuration problem, not a source failure. Fix it by installing certificates (`pip install truststore certifi`) or by pointing SSL_CERT_FILE at a CA bundle. Verification is never disabled."
+        },
+        {
+          "provider": "fred",
+          "status": "failed",
+          "reason": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10 did not answer: The read operation timed out"
+        },
+        {
+          "provider": "fred",
+          "status": "failed",
+          "reason": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10 did not answer: The read operation timed out"
+        }
+      ],
+      "verdict": "UNDETERMINED",
+      "why": [
+        "c1: 1 independent operator(s), needs 3 (failed sources never count)",
+        "c2: outside the freshness window - ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-02-05: 593 days old, window is 35; ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-03-12: 558 days old, window is 35; ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-04-23: 516 days old, window is 35; ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2025-06-11: 467 days old, window is 35; ecb:FM.B.U2.EUR.4F.KR.MRR_FR.LEV@2026-06-17: 96 days old, window is 35"
+      ],
+      "claim": "The ECB main refinancing rate stands at 2.65% following the 2026-09-16 decision",
+      "computed_at": "2026-09-20T22:58:51+00:00"
+    },
+    "workflow_id": null
+  },
+  "Q-2026-09-21-macro-fx": {
+    "tier": "M",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "ecb",
+        "operator": "ecb",
+        "tier": "M",
+        "argv": [
+          "--fx",
+          "USD,GBP,CHF",
+          "--last",
+          "5"
+        ],
+        "mode": "use",
+        "cache_key": "492184dd27442d6f358e0c9d5e5733cb67fa8466498caa979a571f1b7f0eb8ab",
+        "status": "ok",
+        "records": 15,
+        "fetched_at": "2026-09-20T22:54:28+00:00",
+        "cache_age_days": 0,
+        "response_digest": "eafff906a5940a6e1959726af16c3c00401560f65ac3110ba5f162a776275db6"
+      }
+    ],
+    "coverage": null,
+    "workflow_id": null
+  },
+  "Q-2026-09-21-macro-inflation": {
+    "tier": "M",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "eurostat",
+        "operator": "eurostat",
+        "tier": "M",
+        "argv": [
+          "--dataset",
+          "prc_hicp_manr",
+          "--filters",
+          "coicop=CP00,unit=RCH_A",
+          "--geo",
+          "EA20",
+          "--last",
+          "12"
+        ],
+        "mode": "use",
+        "cache_key": "6abf23f9a774ebee75513050feb4aa69a83513045d5401c1c632711028c07574",
+        "status": "ok",
+        "records": 12,
+        "fetched_at": "2026-09-20T22:54:29+00:00",
+        "cache_age_days": 0,
+        "response_digest": "f653f26c82c39d9058dce1c12dae32c976b6a710a7afd919b8ee21a1b6e65d97"
+      },
+      {
+        "provider": "eurostat",
+        "operator": "eurostat",
+        "tier": "M",
+        "argv": [
+          "--dataset",
+          "prc_hicp_manr",
+          "--filters",
+          "coicop=CP00,unit=RCH_A",
+          "--geo",
+          "IT",
+          "--last",
+          "12"
+        ],
+        "mode": "use",
+        "cache_key": "428bbdb71bff54fd4d71236ae8bb413be960a84df8fca3048d2a755e6b1cc89a",
+        "status": "ok",
+        "records": 12,
+        "fetched_at": "2026-09-20T22:54:30+00:00",
+        "cache_age_days": 0,
+        "response_digest": "a14e6b122025f593c71f8ac87ad4e5a73073ea18beae405d524bf983a3e0bee0"
+      },
+      {
+        "provider": "eurostat",
+        "operator": "eurostat",
+        "tier": "M",
+        "argv": [
+          "--dataset",
+          "prc_hicp_manr",
+          "--filters",
+          "coicop=CP00,unit=RCH_A",
+          "--geo",
+          "IT",
+          "--last",
+          "30"
+        ],
+        "mode": "live",
+        "cache_key": "be25667708528ad9f6bd314d3364910af02ad49c2729bc7f1d58cf9f2142d06e",
+        "status": "ok",
+        "records": 30,
+        "fetched_at": "2026-09-20T23:08:30+00:00",
+        "cache_age_days": 0,
+        "response_digest": "ec60b9f7c09771680343b7c932eb332bbe77e2506bd71945b320fcab8d799b3e"
+      },
+      {
+        "provider": "ecb",
+        "operator": "ecb",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "14",
+          "--series",
+          "ICP.M.U2.N.000000.4.ANR"
+        ],
+        "mode": "live",
+        "cache_key": "c1c4db830c386f09547ecb1f8f2e46c4d7bdb76c63bea4f204a36499fe9fa8c9",
+        "status": "ok",
+        "records": 14,
+        "fetched_at": "2026-09-20T23:08:45+00:00",
+        "cache_age_days": 0,
+        "response_digest": "041173c58bca3d4006bcd13a081fa634c556edc81ff99f9442fa453d6ab27811"
+      },
+      {
+        "provider": "ecb",
+        "operator": "ecb",
+        "tier": "M",
+        "argv": [
+          "--last",
+          "14",
+          "--series",
+          "ICP.M.IT.N.000000.4.ANR"
+        ],
+        "mode": "live",
+        "cache_key": "8e7deb9f26a11c6fad3ba90463bd92f52f95018dd5cd7864f4a1bfc61b63f402",
+        "status": "ok",
+        "records": 14,
+        "fetched_at": "2026-09-20T23:08:47+00:00",
+        "cache_age_days": 0,
+        "response_digest": "46388c2da866332d6e57f59b55cc61b997f57f57ec33f9bc3328aef2d9d772ac"
+      },
+      {
+        "provider": "istat",
+        "operator": "istat",
+        "tier": "M",
+        "argv": [
+          "--dataflow",
+          "168_761_DF_DCSP_IPCA1B2025_1",
+          "--key",
+          "M.IT.4.8.000000",
+          "--last",
+          "6"
+        ],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T23:34:05+00:00",
+        "reason": "https://esploradati.istat.it/SDMXWS/rest/data/IT1,168_761_DF_DCSP_IPCA1B2025_1,1.0/M.IT.4.8.000000?format=jsondata&lastNObservations=6 did not answer: <urlopen error timed out>"
+      }
+    ],
+    "coverage": {
+      "c1_independent_operators": 2,
+      "operators": [
+        "ecb",
+        "eurostat"
+      ],
+      "c2_within_freshness": false,
+      "stale": [
+        "eurostat:prc_hicp_manr@2025-01: 598 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-02: 570 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-03: 539 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-04: 509 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-05: 478 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-06: 448 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-07: 417 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-08: 386 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-09: 356 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-10: 325 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-11: 295 days old, window is 35",
+        "eurostat:prc_hicp_manr@2025-12: 264 days old, window is 35"
+      ],
+      "c3_primary_source": true,
+      "primary_providers": [
+        "ecb",
+        "eurostat"
+      ],
+      "c4_observation_not_forecast": true,
+      "forecast_keys": [],
+      "failed_sources": [],
+      "verdict": "UNDETERMINED",
+      "why": [
+        "c1: 2 independent operator(s), needs 3 (failed sources never count)",
+        "c2: outside the freshness window - eurostat:prc_hicp_manr@2025-01: 598 days old, window is 35; eurostat:prc_hicp_manr@2025-02: 570 days old, window is 35; eurostat:prc_hicp_manr@2025-03: 539 days old, window is 35; eurostat:prc_hicp_manr@2025-04: 509 days old, window is 35; eurostat:prc_hicp_manr@2025-05: 478 days old, window is 35; eurostat:prc_hicp_manr@2025-06: 448 days old, window is 35; eurostat:prc_hicp_manr@2025-07: 417 days old, window is 35; eurostat:prc_hicp_manr@2025-08: 386 days old, window is 35; eurostat:prc_hicp_manr@2025-09: 356 days old, window is 35; eurostat:prc_hicp_manr@2025-10: 325 days old, window is 35; eurostat:prc_hicp_manr@2025-11: 295 days old, window is 35; eurostat:prc_hicp_manr@2025-12: 264 days old, window is 35"
+      ],
+      "claim": "Italian HICP annual inflation was 1.2% in December 2025, below the euro-area aggregate",
+      "computed_at": "2026-09-20T23:09:46+00:00"
+    },
+    "workflow_id": null
+  },
+  "Q-2026-09-21-asset-crypto": {
+    "tier": "A",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "coingecko",
+        "operator": "coingecko",
+        "tier": "A",
+        "argv": [
+          "--ids",
+          "bitcoin,ethereum,solana,cardano",
+          "--vs",
+          "eur"
+        ],
+        "mode": "use",
+        "cache_key": "f8c834798eab3ebcff8fbd94ba840a782b71cb322de3ef2d73395665631d9ab9",
+        "status": "ok",
+        "records": 4,
+        "fetched_at": "2026-09-20T22:55:45+00:00",
+        "cache_age_days": 0,
+        "response_digest": "5ed39d4f11bb67e062d3fa14e93b95724459a0fcc2eb89e0f47282b683de38bb"
+      }
+    ],
+    "coverage": {
+      "c1_independent_operators": 1,
+      "operators": [
+        "coingecko"
+      ],
+      "c2_within_freshness": true,
+      "stale": [],
+      "c3_primary_source": false,
+      "primary_providers": [],
+      "c4_observation_not_forecast": true,
+      "forecast_keys": [],
+      "failed_sources": [],
+      "verdict": "UNDETERMINED",
+      "why": [
+        "c1: 1 independent operator(s), needs 3 (failed sources never count)",
+        "c3: no primary source - a report about a fact is not the fact"
+      ],
+      "claim": "Bitcoin trades near EUR 70,713",
+      "computed_at": "2026-09-20T22:58:51+00:00"
+    },
+    "workflow_id": null
+  },
+  "Q-2026-09-21-asset-prices": {
+    "tier": "A",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "stooq",
+        "operator": "stooq",
+        "tier": "A",
+        "argv": [
+          "--last",
+          "30",
+          "--symbol",
+          "spy.us"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:55:52+00:00",
+        "reason": "stooq: the endpoint returned a browser-verification page instead of CSV. This source is not reachable from a stdlib client right now; use yahoo_chart for tier A prices and record stooq as failed."
+      },
+      {
+        "provider": "stooq",
+        "operator": "stooq",
+        "tier": "A",
+        "argv": [
+          "--last",
+          "30",
+          "--symbol",
+          "qcom.us"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:55:53+00:00",
+        "reason": "stooq: the endpoint returned a browser-verification page instead of CSV. This source is not reachable from a stdlib client right now; use yahoo_chart for tier A prices and record stooq as failed."
+      },
+      {
+        "provider": "stooq",
+        "operator": "stooq",
+        "tier": "A",
+        "argv": [
+          "--last",
+          "30",
+          "--symbol",
+          "xauusd"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:55:54+00:00",
+        "reason": "stooq --symbol: 'xauusd' has no market suffix. An unsuffixed symbol resolves to a different listing than most callers mean; pass e.g. \"spy.us\" or \"csspx.de\"."
+      },
+      {
+        "provider": "stooq",
+        "operator": "stooq",
+        "tier": "A",
+        "argv": [
+          "--last",
+          "30",
+          "--symbol",
+          "xagusd"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:55:55+00:00",
+        "reason": "stooq --symbol: 'xagusd' has no market suffix. An unsuffixed symbol resolves to a different listing than most callers mean; pass e.g. \"spy.us\" or \"csspx.de\"."
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "QCOM"
+        ],
+        "mode": "use",
+        "cache_key": "64b76c09fa7667350a7f2a53f051dbe47c5a9f47e57fd4fcdfda31a3ad9834ff",
+        "status": "ok",
+        "records": 63,
+        "fetched_at": "2026-09-20T22:56:07+00:00",
+        "cache_age_days": 0,
+        "response_digest": "d53fc39a6e9a9a28d70091a96a165415d32b04c6149694d6592814c04747e051"
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "EUNL.DE"
+        ],
+        "mode": "use",
+        "cache_key": "e3fa7dc2293a44e4ec03d44a2afb2393ec489c795afd64ffa8b86bd18e50fb3a",
+        "status": "ok",
+        "records": 67,
+        "fetched_at": "2026-09-20T22:56:08+00:00",
+        "cache_age_days": 0,
+        "response_digest": "efc63095a1deb50ee458c15f863b5c15c01a49273ebdb1b0c2132c6f839cbb2a"
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "IUSN.DE"
+        ],
+        "mode": "use",
+        "cache_key": "c9170eecde5c06ca77c2732a64824c95c9c3c230c61a53704b175eeed6e867e7",
+        "status": "ok",
+        "records": 67,
+        "fetched_at": "2026-09-20T22:56:09+00:00",
+        "cache_age_days": 0,
+        "response_digest": "6e77fee07cfa798e4c06f0b0cdf90789e47c842c879959769b0924a6b5cc2292"
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "IS3N.DE"
+        ],
+        "mode": "use",
+        "cache_key": "1ca4cd220c21c23dd8e46b83b03cd928e5cf590d08501569bb4cfc6133f2c271",
+        "status": "ok",
+        "records": 67,
+        "fetched_at": "2026-09-20T22:56:10+00:00",
+        "cache_age_days": 0,
+        "response_digest": "cc4638fc61c1aeb90d40a87715d0219ddbca814b6554790f86911cb21573814b"
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "IGLN.L"
+        ],
+        "mode": "use",
+        "cache_key": "e8495c9fd3bcf2f5583f12258cd40ac4c1d28b41a2b7e346f85c7c15f856cb1e",
+        "status": "ok",
+        "records": 66,
+        "fetched_at": "2026-09-20T22:56:17+00:00",
+        "cache_age_days": 0,
+        "response_digest": "7b210c1a2d17c1ba8f711fd6fc63954bf41e8a7ad485620e5a40ea6d628e52b2"
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "ISLN.L"
+        ],
+        "mode": "use",
+        "cache_key": "9452dc6a547ec8debb44b4aec414d82a4e78c1ed6b74b50aa0c58d0e1b079dad",
+        "status": "ok",
+        "records": 66,
+        "fetched_at": "2026-09-20T22:56:18+00:00",
+        "cache_age_days": 0,
+        "response_digest": "ff7f07cd7d9aa705dc1e19e6a90c34f1ec2240c73f2ab98d709fec95d6817a6b"
+      },
+      {
+        "provider": "yahoo_chart",
+        "operator": "yahoo",
+        "tier": "A",
+        "argv": [
+          "--interval",
+          "1d",
+          "--range",
+          "3mo",
+          "--symbol",
+          "EURUSD=X"
+        ],
+        "mode": "use",
+        "cache_key": "8b04d445c261e1ac500c3a49e2089710e0f839aa9a66f8131752275ce78185cf",
+        "status": "ok",
+        "records": 68,
+        "fetched_at": "2026-09-20T22:56:19+00:00",
+        "cache_age_days": 0,
+        "response_digest": "daa56e94d1d4eaa52e2d1a1b955522090d5c9075646bae43f60e9fc5d70a1cea"
+      }
+    ],
+    "coverage": {
+      "c1_independent_operators": 1,
+      "operators": [
+        "yahoo"
+      ],
+      "c2_within_freshness": false,
+      "stale": [
+        "yahoo_chart:QCOM@2026-06-22: 91 days old, window is 5",
+        "yahoo_chart:QCOM@2026-06-23: 90 days old, window is 5",
+        "yahoo_chart:QCOM@2026-06-24: 89 days old, window is 5",
+        "yahoo_chart:QCOM@2026-06-25: 88 days old, window is 5",
+        "yahoo_chart:QCOM@2026-06-26: 87 days old, window is 5",
+        "yahoo_chart:QCOM@2026-06-29: 84 days old, window is 5",
+        "yahoo_chart:QCOM@2026-06-30: 83 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-01: 82 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-02: 81 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-06: 77 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-07: 76 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-08: 75 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-09: 74 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-10: 73 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-13: 70 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-14: 69 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-15: 68 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-16: 67 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-17: 66 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-20: 63 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-21: 62 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-22: 61 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-23: 60 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-24: 59 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-27: 56 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-28: 55 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-29: 54 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-30: 53 days old, window is 5",
+        "yahoo_chart:QCOM@2026-07-31: 52 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-03: 49 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-04: 48 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-05: 47 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-06: 46 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-07: 45 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-10: 42 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-11: 41 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-12: 40 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-13: 39 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-14: 38 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-17: 35 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-18: 34 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-19: 33 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-20: 32 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-21: 31 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-24: 28 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-25: 27 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-26: 26 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-27: 25 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-28: 24 days old, window is 5",
+        "yahoo_chart:QCOM@2026-08-31: 21 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-01: 20 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-02: 19 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-03: 18 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-04: 17 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-08: 13 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-09: 12 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-10: 11 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-11: 10 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-14: 7 days old, window is 5",
+        "yahoo_chart:QCOM@2026-09-15: 6 days old, window is 5"
+      ],
+      "c3_primary_source": false,
+      "primary_providers": [],
+      "c4_observation_not_forecast": true,
+      "forecast_keys": [],
+      "failed_sources": [
+        {
+          "provider": "stooq",
+          "status": "failed",
+          "reason": "stooq: the endpoint returned a browser-verification page instead of CSV. This source is not reachable from a stdlib client right now; use yahoo_chart for tier A prices and record stooq as failed."
+        },
+        {
+          "provider": "stooq",
+          "status": "failed",
+          "reason": "stooq: the endpoint returned a browser-verification page instead of CSV. This source is not reachable from a stdlib client right now; use yahoo_chart for tier A prices and record stooq as failed."
+        },
+        {
+          "provider": "stooq",
+          "status": "failed",
+          "reason": "stooq --symbol: 'xauusd' has no market suffix. An unsuffixed symbol resolves to a different listing than most callers mean; pass e.g. \"spy.us\" or \"csspx.de\"."
+        },
+        {
+          "provider": "stooq",
+          "status": "failed",
+          "reason": "stooq --symbol: 'xagusd' has no market suffix. An unsuffixed symbol resolves to a different listing than most callers mean; pass e.g. \"spy.us\" or \"csspx.de\"."
+        }
+      ],
+      "verdict": "UNDETERMINED",
+      "why": [
+        "c1: 1 independent operator(s), needs 3 (failed sources never count)",
+        "c2: outside the freshness window - yahoo_chart:QCOM@2026-06-22: 91 days old, window is 5; yahoo_chart:QCOM@2026-06-23: 90 days old, window is 5; yahoo_chart:QCOM@2026-06-24: 89 days old, window is 5; yahoo_chart:QCOM@2026-06-25: 88 days old, window is 5; yahoo_chart:QCOM@2026-06-26: 87 days old, window is 5; yahoo_chart:QCOM@2026-06-29: 84 days old, window is 5; yahoo_chart:QCOM@2026-06-30: 83 days old, window is 5; yahoo_chart:QCOM@2026-07-01: 82 days old, window is 5; yahoo_chart:QCOM@2026-07-02: 81 days old, window is 5; yahoo_chart:QCOM@2026-07-06: 77 days old, window is 5; yahoo_chart:QCOM@2026-07-07: 76 days old, window is 5; yahoo_chart:QCOM@2026-07-08: 75 days old, window is 5; yahoo_chart:QCOM@2026-07-09: 74 days old, window is 5; yahoo_chart:QCOM@2026-07-10: 73 days old, window is 5; yahoo_chart:QCOM@2026-07-13: 70 days old, window is 5; yahoo_chart:QCOM@2026-07-14: 69 days old, window is 5; yahoo_chart:QCOM@2026-07-15: 68 days old, window is 5; yahoo_chart:QCOM@2026-07-16: 67 days old, window is 5; yahoo_chart:QCOM@2026-07-17: 66 days old, window is 5; yahoo_chart:QCOM@2026-07-20: 63 days old, window is 5; yahoo_chart:QCOM@2026-07-21: 62 days old, window is 5; yahoo_chart:QCOM@2026-07-22: 61 days old, window is 5; yahoo_chart:QCOM@2026-07-23: 60 days old, window is 5; yahoo_chart:QCOM@2026-07-24: 59 days old, window is 5; yahoo_chart:QCOM@2026-07-27: 56 days old, window is 5; yahoo_chart:QCOM@2026-07-28: 55 days old, window is 5; yahoo_chart:QCOM@2026-07-29: 54 days old, window is 5; yahoo_chart:QCOM@2026-07-30: 53 days old, window is 5; yahoo_chart:QCOM@2026-07-31: 52 days old, window is 5; yahoo_chart:QCOM@2026-08-03: 49 days old, window is 5; yahoo_chart:QCOM@2026-08-04: 48 days old, window is 5; yahoo_chart:QCOM@2026-08-05: 47 days old, window is 5; yahoo_chart:QCOM@2026-08-06: 46 days old, window is 5; yahoo_chart:QCOM@2026-08-07: 45 days old, window is 5; yahoo_chart:QCOM@2026-08-10: 42 days old, window is 5; yahoo_chart:QCOM@2026-08-11: 41 days old, window is 5; yahoo_chart:QCOM@2026-08-12: 40 days old, window is 5; yahoo_chart:QCOM@2026-08-13: 39 days old, window is 5; yahoo_chart:QCOM@2026-08-14: 38 days old, window is 5; yahoo_chart:QCOM@2026-08-17: 35 days old, window is 5; yahoo_chart:QCOM@2026-08-18: 34 days old, window is 5; yahoo_chart:QCOM@2026-08-19: 33 days old, window is 5; yahoo_chart:QCOM@2026-08-20: 32 days old, window is 5; yahoo_chart:QCOM@2026-08-21: 31 days old, window is 5; yahoo_chart:QCOM@2026-08-24: 28 days old, window is 5; yahoo_chart:QCOM@2026-08-25: 27 days old, window is 5; yahoo_chart:QCOM@2026-08-26: 26 days old, window is 5; yahoo_chart:QCOM@2026-08-27: 25 days old, window is 5; yahoo_chart:QCOM@2026-08-28: 24 days old, window is 5; yahoo_chart:QCOM@2026-08-31: 21 days old, window is 5; yahoo_chart:QCOM@2026-09-01: 20 days old, window is 5; yahoo_chart:QCOM@2026-09-02: 19 days old, window is 5; yahoo_chart:QCOM@2026-09-03: 18 days old, window is 5; yahoo_chart:QCOM@2026-09-04: 17 days old, window is 5; yahoo_chart:QCOM@2026-09-08: 13 days old, window is 5; yahoo_chart:QCOM@2026-09-09: 12 days old, window is 5; yahoo_chart:QCOM@2026-09-10: 11 days old, window is 5; yahoo_chart:QCOM@2026-09-11: 10 days old, window is 5; yahoo_chart:QCOM@2026-09-14: 7 days old, window is 5; yahoo_chart:QCOM@2026-09-15: 6 days old, window is 5",
+        "c3: no primary source - a report about a fact is not the fact"
+      ],
+      "claim": "Qualcomm has fallen roughly 20% over the last three months",
+      "computed_at": "2026-09-20T22:59:01+00:00"
+    },
+    "workflow_id": null
+  },
+  "Q-2026-09-21-sentiment": {
+    "tier": "S",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "cnn_fear_greed",
+        "operator": "cnn",
+        "tier": "S",
+        "argv": [],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:56:33+00:00",
+        "reason": "https://production.dataviz.cnn.io/index/fearandgreed/graphdata returned HTTP 418"
+      },
+      {
+        "provider": "reddit_json",
+        "operator": "reddit",
+        "tier": "S",
+        "argv": [
+          "--last",
+          "25",
+          "--sort",
+          "hot",
+          "--subreddit",
+          "eupersonalfinance"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:56:34+00:00",
+        "reason": "https://www.reddit.com/r/eupersonalfinance/hot.json?limit=25 returned HTTP 403"
+      },
+      {
+        "provider": "cnn_fear_greed",
+        "operator": "cnn",
+        "tier": "S",
+        "argv": [],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:56:43+00:00",
+        "reason": "https://production.dataviz.cnn.io/index/fearandgreed/graphdata returned HTTP 418"
+      },
+      {
+        "provider": "reddit_json",
+        "operator": "reddit",
+        "tier": "S",
+        "argv": [
+          "--last",
+          "25",
+          "--sort",
+          "hot",
+          "--subreddit",
+          "eupersonalfinance"
+        ],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:56:44+00:00",
+        "reason": "https://www.reddit.com/r/eupersonalfinance/hot.json?limit=25 returned HTTP 403"
+      }
+    ],
+    "coverage": null,
+    "workflow_id": null
+  },
+  "Q-2026-09-21-insider-qcom": {
+    "tier": "I",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "finra_short",
+        "operator": "finra",
+        "tier": "I",
+        "argv": [
+          "--last",
+          "6",
+          "--symbol",
+          "QCOM"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:56:59+00:00",
+        "reason": "https://api.finra.org/data/group/otcMarket/name/consolidatedShortInterest?symbol=QCOM&limit=6 did not return JSON: Expecting value: line 1 column 1 (char 0)"
+      },
+      {
+        "provider": "finra_short",
+        "operator": "finra",
+        "tier": "I",
+        "argv": [
+          "--last",
+          "6",
+          "--symbol",
+          "QCOM"
+        ],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:57:11+00:00",
+        "reason": "https://api.finra.org/data/group/otcMarket/name/consolidatedShortInterest?symbol=QCOM&limit=6 did not return JSON: Expecting value: line 1 column 1 (char 0)"
+      },
+      {
+        "provider": "sec_edgar",
+        "operator": "sec",
+        "tier": "I",
+        "argv": [
+          "--cik",
+          "0000804328",
+          "--forms",
+          "4",
+          "--last",
+          "20"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:57:13+00:00",
+        "reason": "sec_edgar: FA_CONTACT_EMAIL is not set. The SEC requires a contact address in the User-Agent of every request; this provider will not send an anonymous one."
+      },
+      {
+        "provider": "sec_edgar",
+        "operator": "sec",
+        "tier": "I",
+        "argv": [
+          "--cik",
+          "0000804328",
+          "--forms",
+          "4",
+          "--last",
+          "20"
+        ],
+        "mode": "live",
+        "cache_key": "63f4f559a0025124d3c029142d52a807d11125525fa624cc7a690eed07103624",
+        "status": "ok",
+        "records": 20,
+        "fetched_at": "2026-09-20T23:07:47+00:00",
+        "cache_age_days": 0,
+        "response_digest": "dcbac6b4f8cdc8cda6094a6276e45fcad36d132a9bdc7649db505b30baa60080"
+      },
+      {
+        "provider": "sec_edgar",
+        "operator": "sec",
+        "tier": "I",
+        "argv": [
+          "--accession",
+          "0000804328-26-000094",
+          "--cik",
+          "0000804328"
+        ],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T23:08:05+00:00",
+        "reason": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000094/0000804328-26-000094.txt returned HTTP 404"
+      },
+      {
+        "provider": "sec_edgar",
+        "operator": "sec",
+        "tier": "I",
+        "argv": [
+          "--accession",
+          "0000804328-26-000091",
+          "--cik",
+          "0000804328"
+        ],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T23:08:06+00:00",
+        "reason": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000091/0000804328-26-000091.txt returned HTTP 404"
+      }
+    ],
+    "coverage": null,
+    "workflow_id": null
+  },
+  "Q-2026-09-21-insider-congress": {
+    "tier": "I",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "congress_trades",
+        "operator": "stockwatcher",
+        "tier": "I",
+        "argv": [
+          "--chamber",
+          "house",
+          "--last",
+          "50"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:57:00+00:00",
+        "reason": "https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json returned HTTP 403"
+      },
+      {
+        "provider": "congress_trades",
+        "operator": "stockwatcher",
+        "tier": "I",
+        "argv": [
+          "--chamber",
+          "house",
+          "--last",
+          "50"
+        ],
+        "mode": "live",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:57:13+00:00",
+        "reason": "https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json returned HTTP 403"
+      }
+    ],
+    "coverage": null,
+    "workflow_id": null
+  },
+  "Q-2026-09-21-policy": {
+    "tier": "P",
+    "requested_by": "/market",
+    "pulls": [
+      {
+        "provider": "rss",
+        "operator": "ecb",
+        "tier": "P",
+        "argv": [
+          "--feed",
+          "ecb_press",
+          "--last",
+          "15"
+        ],
+        "mode": "use",
+        "cache_key": "84cb09c4ee683a1f46360ccefab733f602cad066d87dfdf7d275a140a50e9df4",
+        "status": "ok",
+        "records": 15,
+        "fetched_at": "2026-09-20T22:57:24+00:00",
+        "cache_age_days": 0,
+        "response_digest": "928d497c3dab839bcc7bb49eb4d5a3a6216cfaac94c52b042ecfeee5df678d7b"
+      },
+      {
+        "provider": "rss",
+        "operator": "esma",
+        "tier": "P",
+        "argv": [
+          "--feed",
+          "esma",
+          "--last",
+          "15"
+        ],
+        "mode": "use",
+        "cache_key": "a82693afdd8aca532e08f3936923b7917e1873881c69b496ff352564dd0c3fad",
+        "status": "ok",
+        "records": 10,
+        "fetched_at": "2026-09-20T22:57:25+00:00",
+        "cache_age_days": 0,
+        "response_digest": "52bab51764fb657d613937056bae049cb45c16c3ff8cabce1581f99aa6717fcf"
+      },
+      {
+        "provider": "rss",
+        "operator": "federalreserve",
+        "tier": "P",
+        "argv": [
+          "--feed",
+          "fed_press",
+          "--last",
+          "15"
+        ],
+        "mode": "use",
+        "cache_key": "e4f16393a39cbaa9a2f44d24f3e40220ef3a98cf0313a663c8cb73938fa6db4b",
+        "status": "ok",
+        "records": 15,
+        "fetched_at": "2026-09-20T22:57:26+00:00",
+        "cache_age_days": 0,
+        "response_digest": "3d02ba8559da4d51ade840cf5e26003205b3842563301fbd564bbea32844f422"
+      },
+      {
+        "provider": "rss",
+        "operator": "varies-per-feed",
+        "tier": "P",
+        "argv": [
+          "--feed",
+          "ecb_publications",
+          "--last",
+          "15"
+        ],
+        "mode": "use",
+        "status": "failed",
+        "records": 0,
+        "fetched_at": "2026-09-20T22:57:27+00:00",
+        "reason": "rss: ecb_publications did not return parseable XML: not well-formed (invalid token): line 7, column 18056"
+      }
+    ],
+    "coverage": {
+      "c1_independent_operators": 3,
+      "operators": [
+        "ecb",
+        "esma",
+        "federalreserve"
+      ],
+      "c2_within_freshness": false,
+      "stale": [
+        "rss:fed_press:2ec01e5eacabb1a4: 10 days old, window is 7",
+        "rss:fed_press:79cac1e94224394a: 11 days old, window is 7",
+        "rss:fed_press:b798bd9cc7b7d7bf: 17 days old, window is 7",
+        "rss:fed_press:6225e4003a69e2e5: 25 days old, window is 7",
+        "rss:fed_press:c1b1bf936fbc38ea: 27 days old, window is 7",
+        "rss:fed_press:3b52fc3598a524e6: 32 days old, window is 7",
+        "rss:fed_press:4261c044fa7794e1: 32 days old, window is 7",
+        "rss:fed_press:53d9749060f1dc9b: 32 days old, window is 7",
+        "rss:fed_press:f56b16a88f758863: 33 days old, window is 7",
+        "rss:fed_press:ab90e3b6868b1940: 39 days old, window is 7",
+        "rss:fed_press:7b8eb5d1f96e9b9f: 48 days old, window is 7"
+      ],
+      "c3_primary_source": false,
+      "primary_providers": [],
+      "c4_observation_not_forecast": true,
+      "forecast_keys": [],
+      "failed_sources": [
+        {
+          "provider": "rss",
+          "status": "failed",
+          "reason": "rss: ecb_publications did not return parseable XML: not well-formed (invalid token): line 7, column 18056"
+        }
+      ],
+      "verdict": "UNDETERMINED",
+      "why": [
+        "c2: outside the freshness window - rss:fed_press:2ec01e5eacabb1a4: 10 days old, window is 7; rss:fed_press:79cac1e94224394a: 11 days old, window is 7; rss:fed_press:b798bd9cc7b7d7bf: 17 days old, window is 7; rss:fed_press:6225e4003a69e2e5: 25 days old, window is 7; rss:fed_press:c1b1bf936fbc38ea: 27 days old, window is 7; rss:fed_press:3b52fc3598a524e6: 32 days old, window is 7; rss:fed_press:4261c044fa7794e1: 32 days old, window is 7; rss:fed_press:53d9749060f1dc9b: 32 days old, window is 7; rss:fed_press:f56b16a88f758863: 33 days old, window is 7; rss:fed_press:ab90e3b6868b1940: 39 days old, window is 7; rss:fed_press:7b8eb5d1f96e9b9f: 48 days old, window is 7",
+        "c3: no primary source - a report about a fact is not the fact"
+      ],
+      "claim": "Central banks and EU regulators were active in September 2026",
+      "computed_at": "2026-09-20T22:59:01+00:00"
+    },
+    "workflow_id": null
+  }
+}
